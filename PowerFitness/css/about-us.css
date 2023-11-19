@@ -24,7 +24,7 @@ a {
     font-family: "Post No Bills Colombo ExtraBold Regular";
     font-style: normal;
     font-weight: normal;
-    src: url("/font/PostNoBillsColombo-ExtraBold.woff");
+    src: url("/PowerFitness/font/PostNoBillsColombo-ExtraBold.woff");
 }
 
 /* Variables */
@@ -70,7 +70,7 @@ a {
 .about-us .background-img{
     width: 100%;
     height: 300px;
-    background-image: url("/images/About-us.jpg");
+    background-image: url("/PowerFitness/images/About-us.jpg");
     background-size: cover;
     background-position: center;
 }
