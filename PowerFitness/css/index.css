@@ -24,7 +24,7 @@ a {
     font-family: "Post No Bills Colombo ExtraBold Regular";
     font-style: normal;
     font-weight: normal;
-    src: url("PowerFitness/font/PostNoBillsColombo-ExtraBold.woff");
+    src: url("/PowerFitness/font/PostNoBillsColombo-ExtraBold.woff");
 }
 
 /* Variables */
@@ -255,7 +255,7 @@ a {
 .hero-section .container-img {
     width: 100dvw;
     height: 100dvh;
-    background-image: url("PowerFitness/images/Hero.jpg");
+    background-image: url("/PowerFitness/images/Hero.jpg");
     background-size: cover;
     background-position-x: 10px;
     background-position: center;
@@ -364,21 +364,21 @@ a {
 /* Style the front side  */
 .feature-section .flip-item:nth-child(1) .flip-card-inner .flip-card-front {
     background: linear-gradient(rgb(255, 255, 255, 0.3), rgba(0, 0, 0, 0.5)),
-        url("PowerFitness/images/Zones.jpg");
+        url("/PowerFitness/images/Zones.jpg");
     background-size: cover;
     background-position: center;
 }
 
 .feature-section .flip-item:nth-child(2) .flip-card-inner .flip-card-front {
     background: linear-gradient(rgb(255, 255, 255, 0.3), rgba(0, 0, 0, 0.5)),
-        url("PowerFitness/images/Military.jpg");
+        url("/PowerFitness/images/Military.jpg");
     background-size: cover;
     background-position: right;
 }
 
 .feature-section .flip-item:nth-child(3) .flip-card-inner .flip-card-front {
     background: linear-gradient(rgb(255, 255, 255, 0.3), rgba(0, 0, 0, 0.5)),
-        url("PowerFitness/images/24.jpg");
+        url("/PowerFitness/images/24.jpg");
     background-size: cover;
     background-position: right;
 }
@@ -405,21 +405,21 @@ a {
 
 .feature-section .flip-item:nth-child(1) .flip-card-inner .flip-card-back {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-        url("PowerFitness/images/Zones_Hover.jpg");
+        url("/PowerFitness/images/Zones_Hover.jpg");
     background-size: cover;
     background-position: center;
 }
 
 .feature-section .flip-item:nth-child(2) .flip-card-inner .flip-card-back {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-        url("PowerFitness/images/Military_Hover.jpg");
+        url("/PowerFitness/images/Military_Hover.jpg");
     background-size: cover;
     background-position: center;
 }
 
 .feature-section .flip-item:nth-child(3) .flip-card-inner .flip-card-back {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-        url("PowerFitness/images/24_Hover.jpg");
+        url("/PowerFitness/images/24_Hover.jpg");
     background-size: cover;
     background-position: center;
 }
