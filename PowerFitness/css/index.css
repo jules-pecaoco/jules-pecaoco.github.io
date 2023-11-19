@@ -255,7 +255,7 @@ a {
 .hero-section .container-img {
     width: 100dvw;
     height: 100dvh;
-    background-image: url("PowerFitness/images/Hero.jpg");
+    background-image: url("/PowerFitness/images/Hero.jpg");
     background-size: cover;
     background-position-x: 10px;
     background-position: center;
