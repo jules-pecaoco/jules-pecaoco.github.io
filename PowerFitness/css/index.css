@@ -405,21 +405,21 @@ a {
 
 .feature-section .flip-item:nth-child(1) .flip-card-inner .flip-card-back {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-        url("PowerFitness/images/Zones_Hover.jpg");
+        url("/PowerFitness/images/Zones_Hover.jpg");
     background-size: cover;
     background-position: center;
 }
 
 .feature-section .flip-item:nth-child(2) .flip-card-inner .flip-card-back {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-        url("PowerFitness/images/Military_Hover.jpg");
+        url("/images/Military_Hover.jpg");
     background-size: cover;
     background-position: center;
 }
 
 .feature-section .flip-item:nth-child(3) .flip-card-inner .flip-card-back {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-        url("PowerFitness/images/24_Hover.jpg");
+        url("images/24_Hover.jpg");
     background-size: cover;
     background-position: center;
 }
