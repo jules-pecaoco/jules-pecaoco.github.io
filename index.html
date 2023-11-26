@@ -1,108 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>jules.</title>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="/app.js" defer></script>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jules.</title>
 
-    <body>
-        <div class="click">
-            <div class="social">
-                <a href="#top"
-                    ><i class="fa-solid fa-chevron-up _link up"></i
-                ></a>
-                <a href="" class="up"
-                    ><i
-                        class="fa-brands fa-facebook-messenger _link messenger"
-                    ></i
-                ></a>
-                <a href="#contact" class="up"
-                    ><i class="fa-solid fa-envelopes-bulk _link contact"></i
-                ></a>
-            </div>
-            <div class="emoji">
-                <div id="eye"></div>
-            </div>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- JS -->
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <!-- Hero -->
+    <main class="hero-section">
+      <!-- Header -->
+      <div class="container-bordered bg-light">
+        <div class="container-content text-black">
+          <a href="" class="text-black">jules.delusional.wooooorld</a>
+          <i class="fa-solid fa-sun font-subheader" id="dark-toggle"></i>
         </div>
-        <!-- Foating Emoji -->
-
-        <div class="wrap home_page hidd" id="top">
-            <div class="words">
-                <div class="title box_with_box">
-                    <a href="#">jules.delusion.wooooorld</a>
-                    <a href="#" id="themer"
-                        ><i id="icon" class="fa-solid fa-sun"></i
-                    ></a>
-                </div>
-                <div class="quote box_with_box">
-                    <div class="text">
-                        <p><i>sic parvis magna</i></p>
-                    </div>
-                </div>
-            </div>
-            <div class="profile">
-                <img src="images/profile.png" alt="" />
-            </div>
-            <div class="clickables">
-                <div class="who_i_am box_with_box" style="--order: 1">
-                    <div class="text">
-                        <a href="#about">who am i</a>
-                    </div>
-                </div>
-                <div class="what_i_do box_with_box" style="--order: 2">
-                    <div class="text">
-                        <a href="#work">what i do</a>
-                    </div>
-                </div>
-                <div class="tools_i_use box_with_box" style="--order: 3">
-                    <div class="text">
-                        <a href="#tools">tools i use</a>
-                    </div>
-                </div>
-                <div class="contacts box_with_box" style="--order: 4">
-                    <div class="text">
-                        <a href="#contact">contact me</a>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="container-bordered bg-light">
+        <div class="container-content" id="pink-toggle">
+          <h1 class="text-black font-body" >sic parvis magna</h1>
         </div>
-        <!-- End of Home -->
+      </div>
 
-        <div class="wrap about_page hidd" id="about">I am cringe About</div>
-        <!-- End of About Page -->
+      <!-- Profile -->
+      <div class="container-bordered bg-light">
+        <img src="/images/profile.png" alt="" />
+      </div>
 
-        <div class="wrap work_page hidd" id="work">
-            <div>I am cringe Work</div>
-            <a href="PowerFitness/index.html" class="link-to-other">PowerFitness</a>
+      <!-- Navigations -->
+      <div class="container-bordered container-hover bg-dark">
+        <div class="container-content" >
+          <a href="#me" class="text-white"> me </a>
+          <i class="fa-solid fa-user font-subheader text-white"></i>
         </div>
-        <!-- End of Work Page -->
-
-        <div class="wrap tools_page hidd" id="tools">
-            <div>
-                <h1 id="tools_text">tools i use</h1>
-            </div>
-            <div class="coding">
-                <h1>coding</h1>
-                <i class="fa-brands fa-java"></i>
-                <i class="fa-brands fa-square-js"></i>
-                <i class="fa-brands fa-html5"></i>
-                <i class="fa-brands fa-css3"></i>
-            </div>
-            <div class="tools">
-                <h1>editing</h1>
-                <img id="ps" src="icons/ps.png" alt="Photoshop Icon" />
-                <img id="canva" src="icons/canva.png" alt="Canva Icon" />
-            </div>
+      </div>
+      <div class="container-bordered container-hover bg-dark">
+        <div class="container-content" >
+          <a href="#projects" class="text-white"> projects </a>
+          <i class="fa-solid fa-laptop-code font-subheader text-white"></i>
         </div>
-        <!-- End of Tools Page -->
-
-        <div class="wrap contact_page hidd" id="contact">
-            <div>I am cringe Contact</div>
+      </div>
+      <div class="container-bordered container-hover bg-dark">
+        <div class="container-content">
+          <a href="#tools" class="text-white"> tools </a>
+          <i class="fa-solid fa-gears font-subheader text-white"></i>
         </div>
-        <!-- End of Contact Page -->
-    </body>
+      </div>
+    </main>
+
+    <!-- Me -->
+    <div class="me-section" id="me"></div>
+
+    <!-- Projects -->
+    <div class="project-section" id="projects">
+      <div class="text-black project-header">
+        Projects
+      </div>
+      <div class="project-wrap">
+        <div class="project-card container-bordered bg-light">
+          <div class="project-img bg-dark">
+            <img src="images/gym.png" alt="" >
+          </div>
+          <div class="project-content text-black">
+            Bootstrap 3 Gym Site
+          </div>
+          <div class="project-hovered"> 
+            <button class="btn-bordered text-white" onclick="location.href='https://github.com/jules-pecaoco/power-fitness';">github</button>
+            <button class="btn-bordered text-white" onclick="location.href='https://jules-pecaoco.github.io/power-fitness/';">visit</button>
+          </div>
+        </div>
+        <div class="project-card container-bordered bg-light ">
+          <div class="project-img bg-dark">
+            <img src="images/crud.png" alt="">
+          </div>
+          <div class="project-content text-black">
+            Java CRUD App w/ mySQL
+          </div>
+          <div class="project-hovered"> 
+            <button class="btn-bordered text-white" onclick="location.href='https://github.com/jules-pecaoco/Memorial-Plan-Project';">github</button>
+          </div>
+        </div>
+        <div class="project-card container-bordered bg-light">
+          <div class="project-img bg-dark">
+            <img src="images/calculator.png" alt="">
+          </div>
+          <div class="project-content text-black">
+            PEMDAS Algorithm Calculator
+          </div>
+          <div class="project-hovered"> 
+            <button class="btn-bordered text-white" onclick="location.href='https://github.com/jules-pecaoco/Calculator';">github</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="tools-sections" id="tools">
+
+    </div>
+  </body>
 </html>

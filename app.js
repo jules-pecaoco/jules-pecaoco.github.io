@@ -1,16 +1,25 @@
 // Dark Mode
-const icon = document.getElementById("icon");
+const dark = document.getElementById("dark-toggle");
 
-icon.addEventListener("click", () => {
+dark.addEventListener("click", () => {
+    if(document.body.classList.contains("pink-theme")){
+        document.body.classList.remove("pink-theme");
+    }
     document.body.classList.toggle("dark-theme");
-    if (icon.className == "fa-solid fa-moon") {
-        icon.className = "fa-solid fa-sun";
+    if (dark.className == "fa-solid fa-moon font-subheader") {
+        dark.className = "fa-solid fa-sun font-subheader";
     } else {
-        icon.className = "fa-solid fa-moon";
+        dark.className = "fa-solid fa-moon font-subheader";
     }
 });
 
-//Local Storage
+
+const pink = document.getElementById("pink-toggle");
+pink.addEventListener("click", () => {
+    document.body.classList.toggle("pink-theme");
+    
+});
+
 
 
 //Animate on Scroll
