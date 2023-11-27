@@ -22,6 +22,20 @@ pink.addEventListener("click", () => {
 
 
 
+// Collapse
+const collapse = document.getElementById("collapse-toggle");
+const collapseContent = document.getElementsByClassName("collapse-content")[0];
+
+collapse.addEventListener("click", () => {
+    if (collapseContent.className == "collapse-content") {
+        collapse.className = "fa-solid fa-down-left-and-up-right-to-center";
+        collapseContent.className = "collapse-content show";
+    } else {
+        collapse.className = "fa-solid fa-up-right-and-down-left-from-center";
+        collapseContent.className = "collapse-content";
+    }
+})
+
 //Animate on Scroll
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

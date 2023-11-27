@@ -21,7 +21,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
 
 a {
@@ -30,7 +29,7 @@ a {
 
 /* Variables */
 :root {
-    --filter: invert(2);
+  --filter: invert(2);
   --text-white: white;
   --text-black: black;
   --bg-light: #fefbf6;
@@ -39,7 +38,7 @@ a {
 
 /* Themes */
 .dark-theme {
-    --filter: none;
+  --filter: none;
   --text-white: black;
   --text-black: white;
   --bg-light: #212121;
@@ -47,11 +46,11 @@ a {
 }
 
 .pink-theme {
-    --filter: none;
+  --filter: none;
   --text-white: black;
   --text-black: white;
   --bg-light: #000000;
-  --bg-dark: #D0A2F7;
+  --bg-dark: #d0a2f7;
 }
 
 /* Utiliti Class */
@@ -190,20 +189,26 @@ a {
 /* Me */
 
 /* Projects */
-.project-wrap{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    row-gap: 2rem;
-
-    width: 90vw;
-    text-align: center;
+.project-section {
+  padding-block: 1rem;
 }
 
-.project-header{
-    padding: 1rem;
-    text-align: center;
-    font-size: 2rem;
+.project-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  row-gap: 2rem;
+
+  width: 90vw;
+  text-align: center;
+
+  padding-bottom: 2rem;
+}
+
+.project-header {
+  padding: 1rem;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .project-card {
@@ -220,19 +225,17 @@ a {
 }
 
 .project-img {
-    height: 100%;
-    width: 100%;
-
+  height: 100%;
+  width: 100%;
 }
 
-.project-img img{
-    object-fit: cover;
-    object-position: center;
+.project-img img {
+  object-fit: cover;
+  object-position: center;
 
-    filter: var(--filter);
+  filter: var(--filter);
 
-
-    width: 70%;
+  width: 70%;
 }
 
 .btn-bordered {
@@ -247,10 +250,9 @@ a {
   cursor: pointer;
 }
 
-
-.btn-bordered:hover{
-    background-color: var(--bg-light);
-    color: var(--bg-dark);
+.btn-bordered:hover {
+  background-color: var(--bg-light);
+  color: var(--bg-dark);
 }
 
 .project-hovered {
@@ -260,24 +262,53 @@ a {
   padding-bottom: 1rem;
 }
 
-
-@media screen and (min-width: 992px) {
-  .project-section{
-    padding:1rem;
-  }
-  
-    .project-wrap{
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        width: 95vw;
-    }
-
-    .project-card{
-        height: 70vh;
-        width: 30%;
-    }
+/* Project Wrap More */
+.collapse-content {
+  display: none;
 }
 
+.show {
+  display: flex;
+}
+
+.project-more {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  width: 100%;
+}
+
+.project-more i {
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 50px;
+  background-color: var(--bg-dark);
+
+  color: var(--text-white);
+  cursor: pointer;
+}
+
+.project-more i:hover, .project-more i:active {
+  transition: rotate 250ms ease;
+  rotate: 180deg;
+}
+
+@media screen and (min-width: 992px) {
+  .project-section {
+    padding: 1rem;
+  }
+
+  .project-wrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 95vw;
+  }
+
+  .project-card {
+    height: 70vh;
+    width: 30%;
+  }
+}
 
 /* Tools */
