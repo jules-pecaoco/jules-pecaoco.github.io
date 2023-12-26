@@ -1,0 +1,137 @@
+@import url("./index.css");
+
+/* :root {
+  --text: rgb(19, 15, 11);
+  --background: rgb(244, 243, 241);
+  --primary: rgb(41, 33, 20);
+  --secondary: rgb(161, 149, 135);
+  --accent: rgb(106, 95, 78);
+
+  --main-font: 'Montserrat', sans-serif;
+  --heading-font: 'DM Serif Display', serif;
+} */
+
+.about {
+  font-family: var(--main-font);
+  color: var(--text);
+}
+
+h1 {
+  text-align: center;
+  padding-block: 7rem 2rem;
+  font-size: calc(7rem + 1vw);
+  animation: fromTop 350ms linear forwards;
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  padding: 5vw 10vw;
+  text-align: left;
+  gap: 5vw;
+  animation: fromTop 350ms linear forwards;
+  animation-delay: 350ms;
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.profile .img {
+  width: clamp(300px, 50%, 500px);
+}
+
+.profile img {
+  width: 100%;
+  border-radius: 10rem 10rem 0 0;
+}
+
+.profile h6 {
+  font-size: calc(2rem + 1vw);
+}
+
+.profile p {
+  margin-top: 2rem;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress h2 {
+  text-align: center;
+  font-size: calc(3rem + 1vw);
+}
+
+.wrap {
+  padding-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.wrap h3 {
+  font-size: calc(1rem + 1vw);
+}
+
+.pro {
+  text-align: center;
+}
+
+.jects {
+  padding-block: 0.5rem;
+}
+
+.tech {
+  font-style: italic;
+}
+
+.icon {
+  margin-block: 1rem;
+}
+
+.vertical {
+  margin-block: 1rem;
+  height: 2rem;
+  width: 3px;
+  background-color: var(--text);
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 5rem;
+  }
+
+  .profile {
+    flex-direction: column;
+  }
+
+  .profile p,
+  h6 {
+    text-align: justify;
+  }
+  .profile h6 {
+    font-size: 2rem;
+  }
+
+  .progress h2 {
+    font-size: 3rem !important;
+  }
+}

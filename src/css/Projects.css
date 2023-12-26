@@ -1,0 +1,173 @@
+@import url("./index.css");
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--heading-font);
+  font-size: calc(1rem + 3vw);
+  color: var(--text);
+}
+
+.hero h1, .hero p{
+  opacity: 0;
+  padding: 0;
+  animation: fromTop 350ms linear forwards;
+}
+
+.hero p {
+  font-family: var(--main-font);
+  font-size: calc(1rem + 1vw);
+  animation-delay: 200ms;
+}
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+
+/* Type Animation */
+
+.text-animation span {
+  position: relative;
+}
+
+.text-animation span::before {
+  content: "";
+  color: var(--primary);
+  animation: words 25s infinite;
+}
+
+.text-animation span::after {
+  content: "";
+  background-color: var(--background);
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 102%;
+  border-left: 1px solid var(--text);
+  right: -8px;
+  z-index: 1;
+  animation: cursor 0.6s infinite, typing 25s steps(14) infinite;
+}
+
+@keyframes cursor {
+  to {
+    border-left: 5px solid var(--text);
+  }
+}
+
+@keyframes words {
+  0%,
+  20% {
+    content: "Gamer";
+  }
+  21%,
+  40% {
+    content: "Web Developer";
+  }
+  41%,
+  60% {
+    content: "Programmer";
+  }
+  61%,
+  100% {
+    content: "Single";
+  }
+}
+
+@keyframes typing {
+  10%,
+  15%,
+  30%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
+  }
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 8px);
+  }
+}
+
+
+
+.code,
+.mug {
+  position: absolute;
+  filter: drop-shadow(0 0 30px var(--text));
+  animation: pop 250ms ease-in forwards;
+  z-index: 100;
+  scale: 0;
+}
+
+.code {
+  left: 75vw;
+  top: 10vh;
+  animation-delay: 300ms;
+}
+
+.mug {
+  top: 75vh;
+  left: 15vw;
+  animation-delay: 500ms;
+}
+
+@keyframes pop {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 50vh;
+    font-size: calc(1rem + 2vw);
+  }
+
+  .hero h1{
+    font-size: 3rem;
+  }
+
+  .code,
+  .mug {
+    font-size: 2rem;
+    top: 80%;
+  }
+}
+
+
+/* Card Wrap and Projects */
+.card__wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+

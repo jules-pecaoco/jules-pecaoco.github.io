@@ -1,0 +1,75 @@
+@import url("./index.css");
+
+
+nav {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  position: fixed;
+
+  font-family: var(--main-font);
+  font-weight: 700;
+  z-index: 1000;
+}
+
+nav ul {
+  height: 45px;
+  width: fit-content;
+  padding: 1.5rem 0.8rem;
+  border-radius: 2rem;
+  backdrop-filter: blur(10px);
+
+  gap: 0.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  width: 30%;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  color: var(--text);
+  transition: 150ms ease-in-out;
+  font-size: 1rem !important;
+
+
+  position: relative;
+}
+
+.indicator {
+  border-radius: 2rem;
+  position: absolute;
+  bottom: 0;
+  left: 13px;
+  top: 15%;
+  height: 35.33px;
+  width: 91.94px;
+  z-index: -1;
+  background-color: var(--secondary); 
+  transition: all 150ms linear; 
+}
+
+ul {
+  position: relative;
+}
+
+.active{
+  color: var(--text);
+}
+
+.nav_btn:hover:not(.active) {
+  background-color: rgb(from var(--secondary) r g b / 30%);
+}
+
+@media screen and (max-width: 768px) {
+  
+}
