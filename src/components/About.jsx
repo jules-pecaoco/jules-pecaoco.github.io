@@ -44,6 +44,7 @@ function About() {
             <div className="jects">
               <h4>CALCULATOR</h4>
               <p className="tech">Tech used: Java</p>
+              <img src="https://skillicons.dev/icons?i=java" alt="icons" className="icon"/>
             </div>
           </div>
           <div className="vertical"></div>

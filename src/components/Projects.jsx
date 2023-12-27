@@ -28,7 +28,7 @@ function Projects() {
           tech1={{ txt: "React", avail: true }}
           tech2={{ txt: "CSS", avail: true }}
           scrollY="-77%"
-          links={{ github: "", live: "" }}
+          links={{ github: "https://github.com/jules-pecaoco/reactjs-portfolio", live: "" }}
           live={false}
           rev={false}
         ></Card>
@@ -40,7 +40,7 @@ function Projects() {
           tech1={{ txt: "Bootstrap", avail: true }}
           tech2={{ txt: "jQuery", avail: true }}
           scrollY="-77%"
-          links={{ github: "https://github.com/jules-pecaoco/power-fitness", live: "" }}
+          links={{ github: "https://github.com/jules-pecaoco/power-fitness", live: "https://jules-pecaoco.github.io/power-fitness/" }}
           live={true}
           rev={true}
         ></Card>

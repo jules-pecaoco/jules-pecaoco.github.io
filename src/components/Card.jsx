@@ -35,7 +35,7 @@ const Card = (props) => {
             <span>Code</span>
             <FontAwesomeIcon icon={faGithub} />
           </a>
-          <a href={links.live} style={{ display: live ? "block" : "none" }}>
+          <a href={links.live} style={{ display: live ? "block" : "none" }} target="_blank">
             <span>Live</span>
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="live" />
           </a>
