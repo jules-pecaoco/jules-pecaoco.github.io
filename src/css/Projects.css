@@ -70,19 +70,19 @@
 @keyframes words {
   0%,
   20% {
-    content: "Gamer";
+    content: "Geek";
   }
   21%,
   40% {
-    content: "Web Developer";
+    content: "Software Engineer";
   }
   41%,
   60% {
-    content: "Programmer";
+    content: "Problem";
   }
   61%,
   100% {
-    content: "Single";
+    content: "Blind";
   }
 }
 

@@ -1,59 +1,66 @@
 import "../css/About.css";
+import Profile from "../assets/images/profile-canva.png";
+import { projects, otherTools } from "../projects"; // Import both projects and otherTools
 
 function About() {
+  const projectsByYear = projects.reduce((acc, project) => {
+    if (!acc[project.year]) {
+      acc[project.year] = [];
+    }
+    acc[project.year].push(project);
+    return acc;
+  }, {});
+
+  const sortedYears = Object.keys(projectsByYear).sort().reverse();
+
   return (
     <div className="about">
       <h1>I'm Jules.</h1>
       <div className="profile">
         <div className="img">
-          <img src="https://placehold.co/800x900" alt="" />
+          <img src={Profile} alt="Jules Pecaoco" />
         </div>
         <div className="content">
           <h6>I'm a Web and Application Developer from Bacolod, Philippines.</h6>
           <p>
-            I enjoy creating things that live on the internet, whether that be websites, applications, memes, games and anything the piques my
+            I enjoy creating things that live on the internet, whether that be websites, applications, memes, games and anything that piques my
             interest.
           </p>
         </div>
       </div>
+
       <div className="progress">
         <h2>Project & Tools Progression</h2>
         <div className="wrap">
-          <div className="pro">
-            <h3>2023~</h3>
-            <div className="jects">
-              <h4>MY PORTFOLIO</h4>
-              <p className="tech">Tech used: React and CSS</p>
-              <img src="https://skillicons.dev/icons?i=react,css" alt="icons" className="icon"/>
-            </div>
-            <div className="jects">
-              <h4>POWERFITNESS</h4>
-              <p className="tech">Tech used: Bootstrap and JQuery</p>
-              <img src="https://skillicons.dev/icons?i=bootstrap,jquery" alt="icons" className="icon"/>
-            </div>
-          </div>
-          <div className="vertical"></div>
-          <div className="pro">
-            <h3>2021-2022</h3>
-            <div className="jects">
-              <h4>FUNERAL PLAN</h4>
-              <p className="tech">Tech used: Java, JavaFX, MySQL</p>
-              <img src="https://skillicons.dev/icons?i=java,mysql" alt="icons" className="icon"/>
+          {/* Dynamically create a section for each year */}
+          {sortedYears.map((year, index) => (
+            <>
+              <div className="pro" key={year}>
+                <h3>{year}</h3>
+                {/* Map over the projects for the current year */}
+                {projectsByYear[year].map((project) => (
+                  <div className="jects" key={project.id}>
+                    <h4>{project.title}</h4>
+                    <p className="tech">Tech used: {project.technologies.join(", ")}</p>
+                    <img src={`https://skillicons.dev/icons?i=${project.techIcons}`} alt={`${project.title} tech icons`} className="icon" />
+                  </div>
+                ))}
+              </div>
+              {/* Add a vertical divider between year sections, but not after the last one */}
+              {index < sortedYears.length - 1 && <div className="vertical"></div>}
+            </>
+          ))}
 
-            </div>
-            <div className="jects">
-              <h4>CALCULATOR</h4>
-              <p className="tech">Tech used: Java</p>
-              <img src="https://skillicons.dev/icons?i=java" alt="icons" className="icon"/>
-            </div>
-          </div>
+          {/* Divider for the "Other Tools" section */}
           <div className="vertical"></div>
+
+          {/* Dynamically add the "Other Tools" section */}
           <div className="pro">
-            <h3>2021~</h3>
+            <h3>{otherTools.year}</h3>
             <div className="jects">
-              <h4>OTHER LANGUAGES AND TOOLS I USED</h4>
-              <p className="tech">SASS, Figma, Photoshop, Python, API's, Firebase, HTML, Javascript</p>
-              <img src="https://skillicons.dev/icons?i=sass,figma,photoshop,python,firebase,html,javascript&perline=4" alt="icons" className="icon"/>
+              <h4>{otherTools.title}</h4>
+              <p className="tech">{otherTools.tech}</p>
+              <img src={`https://skillicons.dev/icons?i=${otherTools.icons}`} alt="Other tools icons" className="icon" />
             </div>
           </div>
         </div>

@@ -98,7 +98,7 @@ function Footer() {
           <p>
             <h5>Contact</h5>
             <a href="https://m.me/julesalfonzp">Messenger</a>
-            <a href="mailto:julesalfonzp@gmail.com">julesalfonzp@gmail.com</a>
+            <a href="mailto:jules.pecaoco.dev@gmail.com">jules.pecaoco.dev@gmail.com</a>
           </p>
         </div>
       </div>
