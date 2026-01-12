@@ -1,5 +1,5 @@
 import "../css/About.css";
-import Profile from "../assets/images/profile-canva.png";
+import Profile from "../assets/images/profile.png";
 import { projects, otherTools } from "../projects"; // Import both projects and otherTools
 
 function About() {

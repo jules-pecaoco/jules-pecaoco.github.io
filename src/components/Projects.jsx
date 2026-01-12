@@ -16,19 +16,14 @@ function Projects() {
         </h1>
         <p>Sic Parvis Magna</p>
       </div>
-
       <div className="card__wrap">
-        {/* Map through the projects array and render a Card for each project */}
         {projects.map((project) => (
           <Card
             key={project.id}
             title={project.title}
             description={project.description}
             img={project.img}
-            // Assuming your Card component can now handle an array of technologies
-            // You might need to update the Card component to display these
-            tech1={{ txt: project.technologies[0], avail: true }}
-            tech2={{ txt: project.technologies[1], avail: true }}
+            technologies={project.technologies}
             scrollY={project.scrollY}
             links={project.links}
             live={project.isLive}

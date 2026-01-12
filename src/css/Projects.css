@@ -78,11 +78,11 @@
   }
   41%,
   60% {
-    content: "Problem";
+    content: "Seeker";
   }
   61%,
   100% {
-    content: "Blind";
+    content: "Builder";
   }
 }
 
