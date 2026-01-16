@@ -110,18 +110,24 @@
 
 @media screen and (max-width: 768px) {
   .card {
-    border-radius: 1rem;
+    border-radius: 0.8rem;
     flex-direction: column !important;
     width: 90%;
+    gap: 0rem;
   }
 
   .c__img {
-    border-radius: 0.8rem;
+    border-radius: 0.6rem;
     width: 100%;
   }
 
   .c__content {
     gap: 1rem;
     width: 100%;
+    font-size: 0.7rem;
+  }
+
+  .c__tech {
+    font-size: 0.6rem;
   }
 }
