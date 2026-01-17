@@ -21,10 +21,10 @@ function About() {
           <img src={Profile} alt="Jules Pecaoco" />
         </div>
         <div className="content">
-          <h6>I'm a Web and Application Developer from Bacolod, Philippines.</h6>
+          <h6>I'm a Web and Mobile Application Developer from Bacolod, Philippines.</h6>
           <p>
-            I enjoy creating things that live on the internet, whether that be websites, applications, memes, games and anything that piques my
-            interest.
+            Experienced in building production-ready web and mobile applications used by real users, including large-scale attendance systems and
+            data-driven mobile apps. Comfortable working remotely, collaboration, and delivering features independently.
           </p>
         </div>
       </div>

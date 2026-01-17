@@ -163,6 +163,6 @@ export const projects = [
 export const otherTools = {
   year: "2022~",
   title: "OTHER LANGUAGES AND TOOLS I USED",
-  tech: "SASS, Figma, Photoshop, Python, API's, Firebase, HTML, Javascript",
-  icons: "sass,figma,photoshop,python,firebase,html,javascript,typescript,supabase,gcp&perline=5",
+  tech: "SASS, Figma, Photoshop, Python, API's, Firebase, HTML, Javascript, Typescript, Java, PHP, Flask, Supabase, GCP, Linux, Git, GitHub",
+  icons: "sass,figma,photoshop,python,firebase,html,javascript,typescript,supabase,gcp,git,github,java,php,python,flask&perline=5",
 };
