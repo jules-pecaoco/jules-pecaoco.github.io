@@ -1,1 +1,115 @@
 /* Contact.css */
+.contact-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 20px 60px 20px;
+  font-family: var(--main-font);
+  color: var(--text);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fromTop 350ms linear forwards;
+}
+
+.contact-header h1 {
+  font-size: calc(3rem + 1vw);
+  font-family: var(--heading-font);
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.contact-header p {
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.contact-card {
+  padding: 2.5rem;
+  background: var(--background);
+  border-radius: 2rem;
+  box-shadow: 0 4px 20px rgba(from var(--secondary) r g b / 15%);
+  border: 1px solid rgba(from var(--secondary) r g b / 25%);
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fromTop 500ms ease-out forwards;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--secondary);
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--main-font);
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(from var(--primary) r g b / 10%);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary);
+  color: var(--background);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: var(--accent);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.status-message {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.status-message.success {
+  background-color: rgba(0, 128, 0, 0.1);
+  color: green;
+  border: 1px solid rgba(0, 128, 0, 0.2);
+}
+
+.status-message.error {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: red;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+}

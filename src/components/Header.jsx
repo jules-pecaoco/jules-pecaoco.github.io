@@ -100,11 +100,6 @@ const Header = () => {
             Contact
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/resume" className={({ isActive }) => isActive ? "nav_btn active" : "nav_btn"}>
-            Resume
-          </NavLink>
-        </li>
         <li className="indicator"></li>
       </ul>
     </nav>
