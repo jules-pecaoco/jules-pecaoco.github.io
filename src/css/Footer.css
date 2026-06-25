@@ -40,21 +40,19 @@ footer .__contact {
   gap: 5vw;
 }
 
-footer .__contact p {
-  display: flex;
-  flex-direction: column;
-}
-p a,
-p h5 {
+.__contact a,
+.__contact h5 {
   color: var(--text);
   padding: 0.5rem;
+  text-decoration: none;
+  font-family: var(--main-font);
 }
 
-p h5 {
+.__contact h5 {
   font-size: 1rem;
 }
 
-p a:hover {
+.__contact a:hover {
   color: var(--accent);
 }
 

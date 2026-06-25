@@ -1,0 +1,48 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isAdmin() {
+      return request.auth != null;
+    }
+
+    function isImage() {
+      return request.resource != null
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+
+    function isPdf() {
+      return request.resource != null
+        && request.resource.size < 10 * 1024 * 1024
+        && request.resource.contentType == 'application/pdf';
+    }
+
+    match /portfolio/about/{fileName} {
+      allow read: if true;
+      allow create, update: if isAdmin() && isImage();
+      allow delete: if isAdmin();
+    }
+
+    match /portfolio/projects/{fileName} {
+      allow read: if true;
+      allow create, update: if isAdmin() && isImage();
+      allow delete: if isAdmin();
+    }
+
+    match /portfolio/images/{fileName} {
+      allow read: if true;
+      allow create, update: if isAdmin() && isImage();
+      allow delete: if isAdmin();
+    }
+
+    match /portfolio/resume/{fileName} {
+      allow read: if true;
+      allow create, update: if isAdmin() && isPdf();
+      allow delete: if isAdmin();
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

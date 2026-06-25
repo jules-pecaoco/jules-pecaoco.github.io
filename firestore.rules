@@ -1,0 +1,136 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null;
+    }
+
+    function hasOnlyFields(fields) {
+      return request.resource.data.keys().hasOnly(fields);
+    }
+
+    function hasRequiredFields(fields) {
+      return request.resource.data.keys().hasAll(fields);
+    }
+
+    function isString(field, min, max) {
+      return field is string && field.size() >= min && field.size() <= max;
+    }
+
+    function isOptionalString(field, max) {
+      return !(field in request.resource.data) || (request.resource.data[field] is string && request.resource.data[field].size() <= max);
+    }
+
+    function isOptionalBool(field) {
+      return !(field in request.resource.data) || request.resource.data[field] is bool;
+    }
+
+    function isPublicContent() {
+      return isAdmin() || !("visible" in resource.data) || resource.data.visible == true;
+    }
+
+    function validProject() {
+      return hasOnlyFields([
+        "title", "description", "imageUrl", "technologies", "techIcons", "year",
+        "githubUrl", "liveUrl", "isLive", "reverseLayout", "scrollY", "order",
+        "visible", "createdAt", "updatedAt"
+      ])
+      && hasRequiredFields(["title", "description", "year", "order", "visible"])
+      && isString(request.resource.data.title, 1, 140)
+      && isString(request.resource.data.description, 1, 3000)
+      && isString(request.resource.data.year, 1, 40)
+      && request.resource.data.order is number
+      && request.resource.data.visible is bool
+      && isOptionalString("imageUrl", 1200)
+      && isOptionalString("techIcons", 400)
+      && isOptionalString("githubUrl", 1200)
+      && isOptionalString("liveUrl", 1200)
+      && isOptionalString("scrollY", 40)
+      && isOptionalBool("isLive")
+      && isOptionalBool("reverseLayout")
+      && (!("technologies" in request.resource.data) || request.resource.data.technologies is list)
+      && (!("createdAt" in request.resource.data) || request.resource.data.createdAt is timestamp)
+      && (!("updatedAt" in request.resource.data) || request.resource.data.updatedAt is timestamp);
+    }
+
+    function validEvent() {
+      return hasOnlyFields([
+        "title", "description", "type", "role", "date", "location", "imageUrl",
+        "externalUrl", "tags", "visible", "createdAt", "updatedAt"
+      ])
+      && hasRequiredFields(["title", "description", "type", "role", "date", "visible"])
+      && isString(request.resource.data.title, 1, 200)
+      && isString(request.resource.data.description, 1, 4000)
+      && request.resource.data.type in ["event", "paper", "study", "news"]
+      && request.resource.data.role in ["participant", "speaker", "organizer", "author"]
+      && request.resource.data.date is timestamp
+      && request.resource.data.visible is bool
+      && isOptionalString("location", 200)
+      && isOptionalString("imageUrl", 1200)
+      && isOptionalString("externalUrl", 1200)
+      && (!("tags" in request.resource.data) || request.resource.data.tags is list)
+      && (!("createdAt" in request.resource.data) || request.resource.data.createdAt is timestamp)
+      && (!("updatedAt" in request.resource.data) || request.resource.data.updatedAt is timestamp);
+    }
+
+    function validResume() {
+      return hasOnlyFields(["fileUrl", "fileName", "showDownloadButton", "visible", "updatedAt"])
+      && hasRequiredFields(["fileUrl", "fileName", "showDownloadButton", "visible"])
+      && isString(request.resource.data.fileUrl, 0, 1200)
+      && isString(request.resource.data.fileName, 1, 240)
+      && request.resource.data.showDownloadButton is bool
+      && request.resource.data.visible is bool
+      && (!("updatedAt" in request.resource.data) || request.resource.data.updatedAt is timestamp);
+    }
+
+    function validContactMessage() {
+      return hasOnlyFields(["name", "email", "subject", "message", "read", "emailSent", "createdAt", "updatedAt"])
+      && hasRequiredFields(["name", "email", "subject", "message", "read", "emailSent", "createdAt", "updatedAt"])
+      && isString(request.resource.data.name, 1, 120)
+      && isString(request.resource.data.email, 5, 254)
+      && request.resource.data.email.matches("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$")
+      && isString(request.resource.data.subject, 1, 160)
+      && isString(request.resource.data.message, 1, 5000)
+      && request.resource.data.read == false
+      && request.resource.data.emailSent is bool
+      && request.resource.data.createdAt is timestamp
+      && request.resource.data.updatedAt is timestamp;
+    }
+
+    match /siteContent/{document} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /projects/{document} {
+      allow read: if isPublicContent();
+      allow create, update: if isAdmin() && validProject();
+      allow delete: if isAdmin();
+    }
+    
+    match /events/{document} {
+      allow read: if isPublicContent();
+      allow create, update: if isAdmin() && validEvent();
+      allow delete: if isAdmin();
+    }
+    
+    match /resume/{document} {
+      allow read: if isAdmin() || resource.data.visible == true;
+      allow create, update: if isAdmin() && validResume();
+      allow delete: if isAdmin();
+    }
+    
+    match /contactMessages/{document} {
+      allow create: if validContactMessage();
+      allow read, delete: if isAdmin();
+      allow update: if isAdmin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["read", "updatedAt"])
+        && request.resource.data.read is bool
+        && request.resource.data.updatedAt is timestamp;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
