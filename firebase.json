@@ -1,0 +1,11 @@
+{
+  "firestore": [
+    {
+      "database": "portfolio-document",
+      "rules": "firestore.rules"
+    }
+  ],
+  "storage": {
+    "rules": "storage.rules"
+  }
+}

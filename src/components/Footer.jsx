@@ -1,3 +1,4 @@
+import React from "react";
 import "../css/Footer.css";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -54,31 +55,51 @@ const RandomHeightLine = () => {
   );
 };
 
-const SpotifyPlaylist = () => {
+const SpotifyPlaylist = ({ embedUrl }) => {
   return (
     <>
       <iframe
-        src="https://open.spotify.com/embed/album/7xCcuTA3abKwxj8HwgxP7R?utm_source=generator"
+        src={embedUrl}
         width="100%"
         height="300"
         frameBorder={0}
         allowFullScreen=""
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"
+        title="Spotify Playlist"
       ></iframe>
     </>
   );
 };
 
 function Footer() {
+  const { siteContent, loading } = useSiteContent();
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
+  const spotifyUrl = siteContent?.spotify?.embedUrl || "https://open.spotify.com/embed/album/7xCcuTA3abKwxj8HwgxP7R?utm_source=generator";
+  const socials = siteContent?.socials || [
+    { label: "Github", url: "https://github.com/jules-pecaoco", category: "social" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/julesalfonzpecaoco/", category: "social" },
+    { label: "Facebook", url: "https://www.facebook.com/julesalfonzp", category: "social" },
+    { label: "CV", url: "/resume", category: "social" },
+    { label: "Messenger", url: "https://m.me/julesalfonzp", category: "contact" },
+    { label: "Email", url: "mailto:jules.pecaoco.dev@gmail.com", category: "contact" }
+  ];
+
+  const socialLinks = socials.filter(s => s.category === "social");
+  const contactLinks = socials.filter(s => s.category === "contact");
+
   return (
     <footer>
       <div className="footer__top">
         <div className="__spotify">
-          <SpotifyPlaylist />
+          <SpotifyPlaylist embedUrl={spotifyUrl} />
         </div>
         <div className="__contact">
-          <p>
+          <div>
             <h5>Socials</h5>
             <a href="https://github.com/jules-pecaoco" target="_blank" rel="noopener noreferrer">
               Github
