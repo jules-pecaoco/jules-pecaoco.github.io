@@ -48,19 +48,22 @@ function Projects() {
         <p>{heroData.tagline}</p>
       </div>
       <div className="card__wrap">
-        {projects.map((project) => (
-          <Card
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            img={project.img}
-            technologies={project.technologies}
-            scrollY={project.scrollY}
-            links={project.links}
-            live={project.isLive}
-            rev={project.rev}
-          />
-        ))}
+        {visibleProjects.map((project) => {
+          const imageSrc = project.imageUrl || fallbackImages[project.title] || "";
+          return (
+            <Card
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              img={imageSrc}
+              technologies={project.technologies}
+              scrollY={project.scrollY}
+              links={{ github: project.githubUrl, live: project.liveUrl }}
+              live={project.isLive}
+              rev={project.reverseLayout}
+            />
+          );
+        })}
       </div>
     </>
   );

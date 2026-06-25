@@ -1,24 +1,16 @@
 import React from "react";
 import "../css/Footer.css";
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
-import cvPDF from "../assets/cv.pdf";
-
-const ThemeToggle = () => {
-  const [isSun, setIsSun] = useState(true);
-  const toggleTheme = () => {
-    setIsSun(!isSun);
-    document.body.classList.toggle("dark-theme");
-  };
-  return <FontAwesomeIcon onClick={toggleTheme} icon={isSun ? faSun : faMoon} className="theme" />;
-};
+import ThemeToggle from "./ThemeToggle";
+import { useSiteContent } from "../hooks/useSiteContent";
+import LoadingSpinner from "./LoadingSpinner";
 
 const Line = () => {
   const lines = [];
+
   for (let i = 0; i < 15; i++) {
     lines.push(<RandomHeightLine key={i} />);
   }
+
   return <>{lines}</>;
 };
 
@@ -26,12 +18,15 @@ const RandomHeightLine = () => {
   const getRandomHeight = () => {
     return Math.floor(Math.random() * (100 - 50 + 1)) + 50;
   };
+
   const increaseHeight = (currentHeight) => {
     return currentHeight * 1.2;
   };
+
   const decreaseheight = (currentHeight) => {
     return currentHeight * 0.8;
   };
+
   const initialHeight = getRandomHeight();
   const lineStyle = {
     height: `${initialHeight}px`,
@@ -40,14 +35,17 @@ const RandomHeightLine = () => {
     borderRadius: "1px",
     transition: "height 250ms linear",
   };
+
   const handleHover = (e) => {
     e.target.style.height = `${increaseHeight(initialHeight)}px`;
     e.target.style.backgroundColor = "var(--accent)";
   };
+
   const handleHoverOut = (e) => {
     e.target.style.height = `${decreaseheight(initialHeight)}px`;
     e.target.style.backgroundColor = "var(--secondary)";
   };
+
   return (
     <div className="line-holder">
       <div className="line" style={lineStyle} onMouseEnter={handleHover} onMouseLeave={handleHoverOut}></div>
@@ -62,7 +60,7 @@ const SpotifyPlaylist = ({ embedUrl }) => {
         src={embedUrl}
         width="100%"
         height="300"
-        frameBorder={0}
+        frameBorder="0"
         allowFullScreen=""
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"
@@ -86,11 +84,11 @@ function Footer() {
     { label: "Facebook", url: "https://www.facebook.com/julesalfonzp", category: "social" },
     { label: "CV", url: "/resume", category: "social" },
     { label: "Messenger", url: "https://m.me/julesalfonzp", category: "contact" },
-    { label: "Email", url: "mailto:jules.pecaoco.dev@gmail.com", category: "contact" },
+    { label: "Email", url: "mailto:jules.pecaoco.dev@gmail.com", category: "contact" }
   ];
 
-  const socialLinks = socials.filter((s) => s.category === "social");
-  const contactLinks = socials.filter((s) => s.category === "contact");
+  const socialLinks = socials.filter(s => s.category === "social");
+  const contactLinks = socials.filter(s => s.category === "contact");
 
   return (
     <footer>
@@ -101,26 +99,24 @@ function Footer() {
         <div className="__contact">
           <div>
             <h5>Socials</h5>
-            <a href="https://github.com/jules-pecaoco" target="_blank" rel="noopener noreferrer">
-              Github
-            </a>
-            <a href="https://www.linkedin.com/in/julesalfonzpecaoco/" target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-            <a href={cvPDF} target="_blank" rel="noopener noreferrer">
-              CV
-            </a>
-            <a href="https://www.facebook.com/julesalfonzp" target="_blank" rel="noopener noreferrer">
-              Facebook
-            </a>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {socialLinks.map((link) => (
+                <a key={link.label} href={link.url === "/resume" ? "/resume" : link.url} target={link.url === "/resume" ? "_self" : "_blank"} rel="noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </div>
           </div>
-          <p>
+          <div>
             <h5>Contact</h5>
-            <a href="https://m.me/julesalfonzp" target="_blank" rel="noopener noreferrer">
-              Messenger
-            </a>
-            <a href="mailto:jules.pecaoco.dev@gmail.com">jules.pecaoco.dev@gmail.com</a>
-          </p>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {contactLinks.map((link) => (
+                <a key={link.label} href={link.url} target="_blank" rel="noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
       <div className="footer__bottom">
