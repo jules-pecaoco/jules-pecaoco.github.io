@@ -1,19 +1,9 @@
+import React from "react";
 import "../css/Footer.css";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSun } from "@fortawesome/free-solid-svg-icons";
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
-
-const ThemeToggle = () => {
-  const [isSun, setIsSun] = useState(true);
-
-  const toggleTheme = () => {
-    setIsSun(!isSun);
-    document.body.classList.toggle("dark-theme");
-  };
-
-  return <FontAwesomeIcon onClick={toggleTheme} icon={isSun ? faSun : faMoon} className="theme" />;
-};
+import ThemeToggle from "./ThemeToggle";
+import { useSiteContent } from "../hooks/useSiteContent";
+import LoadingSpinner from "./LoadingSpinner";
 
 const Line = () => {
   const lines = [];
@@ -64,42 +54,70 @@ const RandomHeightLine = () => {
   );
 };
 
-const SpotifyPlaylist = () => {
+const SpotifyPlaylist = ({ embedUrl }) => {
   return (
     <>
       <iframe
-        src="https://open.spotify.com/embed/album/7xCcuTA3abKwxj8HwgxP7R?utm_source=generator"
+        src={embedUrl}
         width="100%"
         height="300"
         frameBorder="0"
-        allowfullscreen=""
+        allowFullScreen=""
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"
+        title="Spotify Playlist"
       ></iframe>
     </>
   );
 };
 
 function Footer() {
+  const { siteContent, loading } = useSiteContent();
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
+  const spotifyUrl = siteContent?.spotify?.embedUrl || "https://open.spotify.com/embed/album/7xCcuTA3abKwxj8HwgxP7R?utm_source=generator";
+  const socials = siteContent?.socials || [
+    { label: "Github", url: "https://github.com/jules-pecaoco", category: "social" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/julesalfonzpecaoco/", category: "social" },
+    { label: "Facebook", url: "https://www.facebook.com/julesalfonzp", category: "social" },
+    { label: "CV", url: "/resume", category: "social" },
+    { label: "Messenger", url: "https://m.me/julesalfonzp", category: "contact" },
+    { label: "Email", url: "mailto:jules.pecaoco.dev@gmail.com", category: "contact" }
+  ];
+
+  const socialLinks = socials.filter(s => s.category === "social");
+  const contactLinks = socials.filter(s => s.category === "contact");
+
   return (
     <footer>
       <div className="footer__top">
         <div className="__spotify">
-          <SpotifyPlaylist />
+          <SpotifyPlaylist embedUrl={spotifyUrl} />
         </div>
         <div className="__contact">
-          <p>
+          <div>
             <h5>Socials</h5>
-            <a href="https://github.com/jules-pecaoco">Github</a>
-            <a href="https://www.linkedin.com/in/julesalfonzpecaoco/">LinkedIn</a>
-            <a href="">CV</a>
-            <a href="https://www.facebook.com/julesalfonzp">Facebook</a>
-          </p>
-          <p>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {socialLinks.map((link) => (
+                <a key={link.label} href={link.url === "/resume" ? "/resume" : link.url} target={link.url === "/resume" ? "_self" : "_blank"} rel="noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div>
             <h5>Contact</h5>
-            <a href="https://m.me/julesalfonzp">Messenger</a>
-            <a href="mailto:jules.pecaoco.dev@gmail.com">jules.pecaoco.dev@gmail.com</a>
-          </p>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {contactLinks.map((link) => (
+                <a key={link.label} href={link.url} target="_blank" rel="noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
       <div className="footer__bottom">

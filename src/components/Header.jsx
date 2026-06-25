@@ -1,21 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import "../css/Header.css";
 
-const Header = ({ handleNavClick }) => {
-  // State for active section
-  const [activeSection, setActiveSection] = useState("projects");
+const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [navbarStyle, setNavbarStyle] = useState({
     backgroundColor: "transparent",
     transition: "background-color 350ms linear",
   });
-
-  // Handle nav click and set active section
-  const handleEvents = (section) => {
-    document.title = `Jules Pecaoco • ${section} `;
-    handleNavClick(section);
-    setActiveSection(section);
-  };
+  
+  const location = useLocation();
+  const navListRef = useRef(null);
 
   // Handle scroll position
   const handleScroll = () => {
@@ -26,7 +21,6 @@ const Header = ({ handleNavClick }) => {
   // Navbar background color change on scroll
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -35,7 +29,7 @@ const Header = ({ handleNavClick }) => {
   useEffect(() => {
     if (scrollPosition > 100) {
       setNavbarStyle({
-        backgroundColor: "rgb(from var(--secondary) r g b / 40%)", // Use rgba for transparent colors
+        backgroundColor: "rgb(from var(--secondary) r g b / 40%)",
         transition: "background-color 350ms linear",
       });
     } else {
@@ -46,37 +40,70 @@ const Header = ({ handleNavClick }) => {
     }
   }, [scrollPosition]);
 
-  // Handle nav link click effect
-  const handleNavLinkClick = (e, section) => {
-    e.preventDefault();
-    const linkPosition = e.target.getBoundingClientRect();
-    const li = e.target.parentNode;
-    const ul = li.parentNode.getBoundingClientRect();
-    const offsetLeft = linkPosition.left - ul.left;
-    const indicator = document.querySelector(".indicator");
-    indicator.style.cssText = `left: ${offsetLeft - 3}px; width: ${li.offsetWidth + 6}px;`;
+  // Adjust indicator position based on active link
+  useEffect(() => {
+    const updateIndicator = () => {
+      if (!navListRef.current) return;
+      const activeLink = navListRef.current.querySelector(".nav_btn.active");
+      const indicator = navListRef.current.querySelector(".indicator");
+      
+      if (activeLink && indicator) {
+        const linkPosition = activeLink.getBoundingClientRect();
+        const li = activeLink.parentNode;
+        const ul = navListRef.current.getBoundingClientRect();
+        const offsetLeft = linkPosition.left - ul.left;
+        indicator.style.cssText = `left: ${offsetLeft - 3}px; width: ${li.offsetWidth + 6}px; opacity: 1;`;
+      } else if (indicator) {
+        // Hide indicator if no nav item is active
+        indicator.style.opacity = "0";
+      }
+    };
 
-    // Call handleEvents function
-    handleEvents(section);
-  };
+    const timeoutId = setTimeout(updateIndicator, 50);
+    window.addEventListener("resize", updateIndicator);
+
+    // Update document title dynamically
+    let sectionTitle = "Dev";
+    if (location.pathname === "/") sectionTitle = "Projects";
+    else if (location.pathname === "/about") sectionTitle = "About";
+    else if (location.pathname === "/events") sectionTitle = "Events";
+    else if (location.pathname === "/contact") sectionTitle = "Contact";
+    else if (location.pathname === "/resume") sectionTitle = "Resume";
+    document.title = `Jules Pecaoco • ${sectionTitle}`;
+
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener("resize", updateIndicator);
+    };
+  }, [location]);
 
   return (
     <nav>
-      <ul style={navbarStyle}>
+      <ul ref={navListRef} style={navbarStyle}>
         <li>
-          <a href="#" onClick={(e) => handleNavLinkClick(e, "Projects")} className={activeSection === "Projects" ? "nav_btn active" : "nav_btn"}>
+          <NavLink to="/" className={({ isActive }) => isActive ? "nav_btn active" : "nav_btn"}>
             Projects /
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href="#" onClick={(e) => handleNavLinkClick(e, "About")} className={activeSection === "About" ? "nav_btn active" : "nav_btn"}>
+          <NavLink to="/about" className={({ isActive }) => isActive ? "nav_btn active" : "nav_btn"}>
             About
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href="#" onClick={(e) => handleNavLinkClick(e, "Contact")} className={activeSection === "Contact" ? "nav_btn active" : "nav_btn"}>
+          <NavLink to="/events" className={({ isActive }) => isActive ? "nav_btn active" : "nav_btn"}>
+            Events
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" className={({ isActive }) => isActive ? "nav_btn active" : "nav_btn"}>
             Contact
-          </a>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/resume" className={({ isActive }) => isActive ? "nav_btn active" : "nav_btn"}>
+            Resume
+          </NavLink>
         </li>
         <li className="indicator"></li>
       </ul>
