@@ -131,20 +131,20 @@ This file tracks the status of the migration from a static React + Vite portfoli
 ### ⬜ Phase 3: Storage Migration
 - [ ] Upload static images to Firebase Storage.
 - [ ] Update Firestore document URLs.
-- [ ] Implement administrative upload widget (`src/components/ImageUpload.jsx`).
+- [x] Implement administrative upload widget (`src/components/ImageUpload.jsx`).
 
-### ⬜ Phase 4: New Public Pages
-- [ ] Develop `/events` timeline/list with layout filter.
-- [ ] Build `/contact` page with local verification and EmailJS client integration.
-- [ ] Build `/resume` view/download page.
+### ✅ Phase 4: New Public Pages
+- [x] Develop `/events` timeline/list with layout filter.
+- [x] Build `/contact` page with local verification and EmailJS client integration.
+- [x] Build `/resume` view/download page.
 
-### ⬜ Phase 5: CRUD Admin Dashboard
-- [ ] Build `/admin/login` page.
-- [ ] Implement Dashboard with quick metrics.
-- [ ] Create admin managers: Projects Manager (with sorting support), Events Manager, Site Content Editor, Resume Manager, Messages Inbox.
+### ✅ Phase 5: CRUD Admin Dashboard
+- [x] Build `/admin/login` page.
+- [x] Implement Dashboard with quick metrics.
+- [x] Create admin managers: Projects Manager (with sorting support), Events Manager, Site Content Editor, Resume Manager, Messages Inbox.
 
 ### ⬜ Phase 6: Production Polish & Deployment
-- [ ] Implement secure Firestore and Storage JSON rule configurations.
+- [x] Implement secure Firestore and Storage JSON rule configurations.
 - [ ] Deploy client bundle to Vercel/GitHub Pages.
 
 ---
