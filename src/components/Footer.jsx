@@ -86,11 +86,11 @@ function Footer() {
     { label: "Facebook", url: "https://www.facebook.com/julesalfonzp", category: "social" },
     { label: "CV", url: "/resume", category: "social" },
     { label: "Messenger", url: "https://m.me/julesalfonzp", category: "contact" },
-    { label: "Email", url: "mailto:jules.pecaoco.dev@gmail.com", category: "contact" }
+    { label: "Email", url: "mailto:jules.pecaoco.dev@gmail.com", category: "contact" },
   ];
 
-  const socialLinks = socials.filter(s => s.category === "social");
-  const contactLinks = socials.filter(s => s.category === "contact");
+  const socialLinks = socials.filter((s) => s.category === "social");
+  const contactLinks = socials.filter((s) => s.category === "contact");
 
   return (
     <footer>
@@ -113,7 +113,7 @@ function Footer() {
             <a href="https://www.facebook.com/julesalfonzp" target="_blank" rel="noopener noreferrer">
               Facebook
             </a>
-          </p>
+          </div>
           <p>
             <h5>Contact</h5>
             <a href="https://m.me/julesalfonzp" target="_blank" rel="noopener noreferrer">

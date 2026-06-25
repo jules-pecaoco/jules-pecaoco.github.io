@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/About.css";
 import Profile from "../assets/images/profile.png";
-import { projects, otherTools } from "../projects"; // Import both projects and otherTools
+// import { projects, otherTools } from "../projects"; // Import both projects and otherTools
 
 function About() {
   const { projects, loading: projectsLoading } = useProjects();
