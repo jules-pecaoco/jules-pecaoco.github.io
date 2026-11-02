@@ -1,0 +1,6 @@
+---
+import { content } from '../data/content.js';
+import Base from '../layouts/Base.astro';
+import ContactForm from '../legacy/pages/Contact.jsx';
+---
+<Base title="Contact Jules — Opportunities & Collaboration" path="/contact/"><section class="page-heading"><p class="eyebrow">OPPORTUNITIES · PROJECTS · COLLABORATION</p><h1>Let's make<br/>something useful.</h1><p>{content.site.contactIntro}</p></section><div class="contact-grid"><article class="contact-card"><p class="eyebrow">START A CONVERSATION</p><h2>Email me.</h2><p>The easiest way to discuss a role or project. Include a little context, your timeline, and the best way to reach you.</p><a href={"mailto:"+content.site.email}>{content.site.email} ↗</a></article><article class="contact-card"><p class="eyebrow">PROFESSIONAL CONNECTIONS</p><h2>Find me online.</h2><p><a href={content.site.linkedin}>LinkedIn ↗</a></p><p><a href={content.site.github}>GitHub ↗</a></p><p><a href="https://m.me/julesalfonzp">Messenger ↗</a></p></article></div><ContactForm client:only="react" /></Base>

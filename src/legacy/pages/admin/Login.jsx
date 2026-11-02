@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginWithEmail } from "../../firebase/auth";
-import { seedDatabase } from "../../firebase/seed";
-import "../../css/Admin.css";
+import { loginWithEmail } from "../../../firebase/auth";
+import { seedDatabase } from "../../../firebase/seed";
+import "../../../css/Admin.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");

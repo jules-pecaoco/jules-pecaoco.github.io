@@ -23,3 +23,17 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Astro and generated publication snapshot
+.astro/
+src/data/portfolio.generated.json
+
+# Local activation helpers and audit artifacts
+output/
+scripts/release-access.mjs
+scripts/activate-firebase.mjs
+scripts/initialize-publication.mjs
+scripts/verify-rules.mjs
+scripts/inspect-resume.mjs
+scripts/verify-live-access.mjs
+scripts/github-release.mjs

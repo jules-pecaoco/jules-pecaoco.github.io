@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useEvents } from "../../hooks/useEvents";
-import { addDocument, updateDocument, deleteDocument } from "../../hooks/useFirestore";
-import LoadingSpinner from "../../components/LoadingSpinner";
+import { useEvents } from "../../../hooks/useEvents";
+import { addDocument, updateDocument, deleteDocument } from "../../../hooks/useFirestore";
+import LoadingSpinner from "../../../components/LoadingSpinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlus,
@@ -10,7 +10,7 @@ import {
   faArrowLeft,
   faSave
 } from "@fortawesome/free-solid-svg-icons";
-import "../../css/Admin.css";
+import "../../../css/Admin.css";
 
 const EventsManager = () => {
   const { events, loading } = useEvents();

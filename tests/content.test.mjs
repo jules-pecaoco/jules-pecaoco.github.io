@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { validateContent } from '../src/data/schema.mjs';
+const baseline=JSON.parse(fs.readFileSync(new URL('../src/data/portfolio.json',import.meta.url)));
+const copy=()=>structuredClone(baseline);
+test('all nine migrated projects form a valid publishable snapshot',()=>{assert.equal(baseline.projects.length,9);assert.deepEqual(validateContent(baseline),[])});
+test('duplicate project routes cannot overwrite a generated page',()=>{const content=copy();content.projects[1].slug=content.projects[0].slug;assert.ok(validateContent(content).some(e=>e.includes('unique URL')))});
+test('executable or protocol-relative links cannot be published',()=>{for(const url of ['javascript:alert(1)','//attacker.example','data:text/html,test']){const content=copy();content.projects[0].live=url;assert.ok(validateContent(content).some(e=>e.includes('unsafe')))}});
+test('proof links must reference a visible generated project',()=>{const content=copy();content.projects[0].visible=false;assert.ok(validateContent(content).some(e=>e.includes('proof link')))});
+test('removing all homepage projects is caught before publishing',()=>{const content=copy();content.projects.forEach(p=>p.featured=false);assert.ok(validateContent(content).some(e=>e.includes('Feature at least')))});
+test('oversized snapshots and unsafe resume URLs fail closed',()=>{const content=copy();content.resume.url='javascript:alert(1)';assert.ok(validateContent(content).some(e=>e.includes('resume')));content.site.aboutBio='x'.repeat(260000);assert.ok(validateContent(content).some(e=>e.includes('too large')))});
+test('notes require dates and safe reference links',()=>{const content=copy();content.events.push({title:'Example',date:'not a date',description:'A note',url:'https://example.com',visible:true});assert.ok(validateContent(content).some(e=>e.includes('Event 1')))});

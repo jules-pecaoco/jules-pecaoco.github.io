@@ -1,0 +1,8 @@
+---
+import { projectImage } from '../../data/content.js';
+import Base from '../../layouts/Base.astro';
+import { projects, content } from '../../data/content.js';
+export function getStaticPaths(){return projects.map(project=>({params:{slug:project.slug},props:{project}}))}
+const {project:p}=Astro.props;
+---
+<Base title={p.title+' — Jules Pecaoco'} description={p.summary} path={'/projects/'+p.slug+'/'}><div class="page-heading"><a href="/projects/">← All projects</a><p class="eyebrow">{p.category}</p><h1>{p.title}</h1><p>{p.summary}</p></div><article class="story">{p.image&&<img class="story-image" src={projectImage(p)} alt={p.title+' interface'} width="1000" height="650"/>}<h2>The purpose</h2><p>{p.problem}</p><h2>The experience</h2><p>{p.story}</p><h2>Explore the work</h2><p>See the implementation and available demo for a closer look at the application.</p><div class="actions">{p.live&&<a class="button primary" href={p.live} target="_blank" rel="noopener noreferrer">Open live project ↗</a>}<a class="button" href={'https://github.com/jules-pecaoco/'+p.repo} target="_blank" rel="noopener noreferrer">View source ↗</a></div><div class="note"><p class="eyebrow">SUPPORTING DETAILS</p><p>{p.tools}</p><p>This overview describes the published project scope. For a discussion of my contribution, delivery process, or suitability for your team, <a href="/contact/">get in touch</a>.</p></div></article></Base>

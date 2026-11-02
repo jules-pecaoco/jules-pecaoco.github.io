@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useProjects } from "../../hooks/useProjects";
-import { addDocument, updateDocument, deleteDocument } from "../../hooks/useFirestore";
-import ImageUpload from "../../components/ImageUpload";
-import LoadingSpinner from "../../components/LoadingSpinner";
+import { useProjects } from "../../../hooks/useProjects";
+import { addDocument, updateDocument, deleteDocument } from "../../../hooks/useFirestore";
+import ImageUpload from "../../../components/ImageUpload";
+import LoadingSpinner from "../../../components/LoadingSpinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlus,
@@ -13,7 +13,7 @@ import {
   faArrowLeft,
   faSave
 } from "@fortawesome/free-solid-svg-icons";
-import "../../css/Admin.css";
+import "../../../css/Admin.css";
 
 const ProjectsManager = () => {
   const { projects, loading } = useProjects();

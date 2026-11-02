@@ -1,8 +1,8 @@
 import React from "react";
-import { useFirestoreDoc } from "../hooks/useFirestore";
-import LoadingSpinner from "../components/LoadingSpinner";
+import { useFirestoreDoc } from "../../hooks/useFirestore";
+import LoadingSpinner from "../../components/LoadingSpinner";
 import { Link } from "react-router-dom";
-import "../css/Resume.css";
+import "../../css/Resume.css";
 
 const Resume = () => {
   const { data: resumeData, loading } = useFirestoreDoc("resume", "current");

@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useFirestoreDoc, updateDocument } from "../../hooks/useFirestore";
-import { uploadFile } from "../../firebase/storage";
-import LoadingSpinner from "../../components/LoadingSpinner";
+import { useFirestoreDoc, updateDocument } from "../../../hooks/useFirestore";
+import { uploadFile } from "../../../firebase/storage";
+import LoadingSpinner from "../../../components/LoadingSpinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileUpload, faExternalLinkAlt, faSave } from "@fortawesome/free-solid-svg-icons";
-import "../../css/Admin.css";
+import "../../../css/Admin.css";
 
 const ResumeManager = () => {
   const { data: resumeData, loading } = useFirestoreDoc("resume", "current");

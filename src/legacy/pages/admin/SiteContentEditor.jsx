@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useSiteContent } from "../../hooks/useSiteContent";
-import { updateDocument } from "../../hooks/useFirestore";
-import ImageUpload from "../../components/ImageUpload";
-import LoadingSpinner from "../../components/LoadingSpinner";
+import { useSiteContent } from "../../../hooks/useSiteContent";
+import { updateDocument } from "../../../hooks/useFirestore";
+import ImageUpload from "../../../components/ImageUpload";
+import LoadingSpinner from "../../../components/LoadingSpinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave } from "@fortawesome/free-solid-svg-icons";
-import "../../css/Admin.css";
+import "../../../css/Admin.css";
 
 const SiteContentEditor = () => {
   const { siteContent, loading } = useSiteContent();

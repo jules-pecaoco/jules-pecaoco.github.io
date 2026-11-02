@@ -1,8 +1,8 @@
 import React from "react";
-import { useProjects } from "../../hooks/useProjects";
-import { useEvents } from "../../hooks/useEvents";
-import { useFirestoreCollection } from "../../hooks/useFirestore";
-import LoadingSpinner from "../../components/LoadingSpinner";
+import { useProjects } from "../../../hooks/useProjects";
+import { useEvents } from "../../../hooks/useEvents";
+import { useFirestoreCollection } from "../../../hooks/useFirestore";
+import LoadingSpinner from "../../../components/LoadingSpinner";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,7 +12,7 @@ import {
   faEnvelope,
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
-import "../../css/Admin.css";
+import "../../../css/Admin.css";
 
 const Dashboard = () => {
   const { projects, loading: projectsLoading } = useProjects();

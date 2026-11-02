@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useFirestoreCollection, updateDocument, deleteDocument } from "../../hooks/useFirestore";
-import LoadingSpinner from "../../components/LoadingSpinner";
+import { useFirestoreCollection, updateDocument, deleteDocument } from "../../../hooks/useFirestore";
+import LoadingSpinner from "../../../components/LoadingSpinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTrash,
@@ -10,7 +10,7 @@ import {
   faTimesCircle,
   faEnvelopeOpen
 } from "@fortawesome/free-solid-svg-icons";
-import "../../css/Admin.css";
+import "../../../css/Admin.css";
 
 const MessagesInbox = () => {
   const { data: messages, loading } = useFirestoreCollection("contactMessages", "createdAt", "desc");

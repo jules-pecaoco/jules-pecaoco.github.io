@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useEvents } from "../hooks/useEvents";
-import LoadingSpinner from "../components/LoadingSpinner";
-import "../css/Events.css";
+import { useEvents } from "../../hooks/useEvents";
+import LoadingSpinner from "../../components/LoadingSpinner";
+import "../../css/Events.css";
 
 const Events = () => {
   const { events, loading } = useEvents();

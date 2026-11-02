@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { addDocument } from "../hooks/useFirestore";
-import { sendContactEmail } from "../services/emailjs";
-import "../css/Contact.css";
+import { addDocument } from "../../hooks/useFirestore";
+import { sendContactEmail } from "../../services/emailjs";
+import "../../css/Contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({

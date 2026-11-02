@@ -1,0 +1,4 @@
+---
+import Base from '../../layouts/Base.astro';import Card from '../../components/ProjectCard.astro';import { projects, content } from '../../data/content.js';
+---
+<Base title="Projects — Jules Pecaoco" path="/projects/"><section class="page-heading"><p class="eyebrow">SELECTED WORK & PROJECT ARCHIVE</p><h1>Things I've built.</h1><p>Operational tools, mobile experiences, and useful websites. Explore the purpose and context behind each project.</p></section>{projects.map(project=><Card project={project}/>)}</Base>

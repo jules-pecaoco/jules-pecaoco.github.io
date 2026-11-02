@@ -1,0 +1,6 @@
+---
+import Base from '../layouts/Base.astro';
+import { content } from '../data/content.js';
+const events=content.events.filter(event=>event.visible).sort((a,b)=>b.date.localeCompare(a.date));
+---
+<Base title="Notes & Events — Jules Pecaoco" path="/events/"><section class="page-heading"><p class="eyebrow">LEARNING & PARTICIPATION</p><h1>Always learning.</h1><p>A space for studies, event notes, and reflections.</p></section><section class="story">{events.length?events.map(event=><article class="section"><p class="eyebrow"><time datetime={event.date}>{event.date}</time></p><h2>{event.title}</h2><p style="white-space:pre-wrap">{event.description}</p>{event.url&&<a href={event.url} target="_blank" rel="noopener noreferrer">Explore the reference ↗</a>}</article>):<><p>New notes will appear here when there is something useful to share. In the meantime, explore the work that puts that learning into practice.</p><a class="button primary" href="/projects/">Explore projects ↗</a></>}</section></Base>

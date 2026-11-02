@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet, NavLink, useNavigate } from "react-router-dom";
-import { logout } from "../../firebase/auth";
-import { useAuth } from "../../hooks/useAuth";
+import { logout } from "../../../firebase/auth";
+import { useAuth } from "../../../hooks/useAuth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChartPie,
@@ -14,7 +14,7 @@ import {
   faSignOutAlt,
   faShieldAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import "../../css/Admin.css";
+import "../../../css/Admin.css";
 
 const AdminLayout = () => {
   const { user } = useAuth();

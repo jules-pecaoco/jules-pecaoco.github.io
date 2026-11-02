@@ -1,0 +1,5 @@
+---
+import { content } from '../data/content.js';
+import Base from '../layouts/Base.astro';
+---
+<Base title="About Jules — Web & Mobile Developer" path="/about/"><section class="page-heading"><p class="eyebrow">THE PERSON BEHIND THE WORK</p><h1>I'm Jules.</h1></section><section class="split"><img class="portrait" src={content.site.profileImage} alt="Jules Alfonz Pecaoco" width="389" height="500"/><div><h2>{content.site.aboutHeading}</h2>{content.site.aboutBio.split(/\n\n/).map(paragraph=><p>{paragraph}</p>)}<div class="actions"><a class="button primary" href="/resume/">View my CV ↗</a><a class="button" href="/contact/">Start a conversation</a></div><motto>Sic Parvis Magna. A reminder to keep building, learning, and moving forward.</motto></div></section></Base>
