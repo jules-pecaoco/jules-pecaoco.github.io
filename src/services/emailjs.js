@@ -7,8 +7,7 @@ const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "";
 export const sendContactEmail = async (formData) => {
   if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
     console.warn("EmailJS credentials not configured in env variables.");
-    // Simulate API delay and succeed so that the form works locally in preview/dev mode
-    return new Promise((resolve) => setTimeout(resolve, 1000));
+    throw new Error("Email notifications are not configured. The contact form will save the message to the private inbox.");
   }
 
   try {
