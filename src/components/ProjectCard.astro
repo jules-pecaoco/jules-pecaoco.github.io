@@ -2,4 +2,4 @@
 import { projectImage } from '../data/content.js';
 const {project:p}=Astro.props;
 ---
-<article class="project"><a class="project-image" href={'/projects/'+p.slug+'/'} aria-label={'Read about '+p.title}>{p.image?<img src={projectImage(p)} alt={p.title+' application preview'} width="700" height="500" loading="lazy"/>:<span aria-hidden="true">{p.title.slice(0,2)}</span>}</a><div><p class="eyebrow">{p.category}</p><h3><a href={'/projects/'+p.slug+'/'}>{p.title}</a></h3><p>{p.summary}</p><a href={'/projects/'+p.slug+'/'}>Explore the project ↗</a></div></article>
+<article class="project"><a class="project-image" href={'/projects/'+p.slug+'/'} aria-label={'Read about '+p.title}>{p.image?<img src={projectImage(p)} alt={p.title+' application preview'} width="700" height="500" loading="lazy"/>:<div class="project-placeholder"><span class="eyebrow">{p.category}</span><strong>{p.title}</strong><small>Explore the implementation ↗</small></div>}</a><div><p class="eyebrow">{p.category}</p><h3><a href={'/projects/'+p.slug+'/'}>{p.title}</a></h3><p>{p.summary}</p><a href={'/projects/'+p.slug+'/'}>Explore the project ↗</a></div></article>

@@ -37,3 +37,9 @@ scripts/verify-rules.mjs
 scripts/inspect-resume.mjs
 scripts/verify-live-access.mjs
 scripts/github-release.mjs
+
+# Local browser verification and authenticated migration helpers
+.playwright-cli/
+scripts/review-content.mjs
+scripts/review-public-content.mjs
+scripts/migrate-portfolio-content.mjs

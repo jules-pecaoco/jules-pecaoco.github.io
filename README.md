@@ -73,3 +73,9 @@ The original stable CV and its previous hashed link remain available. A new uplo
 The verified existing owner account has the `admin: true` claim. Firestore rules for `portfolio-document` and Storage rules have been deployed and checked against the local sources. The first private draft and public snapshot contain all nine projects. Studio refreshes sign-in tokens on entry so updated claims are picked up.
 
 Firebase Storage currently returns HTTP 402 because the project’s billing account is closed. Billing has not been changed. The existing Firebase resume record is preserved; the public portfolio uses the working bundled PDF. File uploads and old Storage download links remain unavailable until the owner restores Storage billing. Draft editing, Firestore publishing, and the GitHub-hosted PDF do not require that repair. EmailJS public and private keys are stored in encrypted repository Actions secrets. The private key is not exposed to the browser build. Service and template IDs are still required; until they are configured, contact submissions accurately report inbox storage without claiming an email was sent.
+
+## Portfolio presentation update
+
+The public site includes project filters, screenshot enlargement with Escape dismissal, perspective previews, reduced-motion-aware entrances, and shared interaction styles. Project text remains editable through Studio using the existing schema. The CV page includes a source-backed summary of the bundled CV; update that page when replacing qualifications in the PDF.
+
+The November 2026 content refresh was applied to Firebase draft and published snapshots with optimistic update-time checks and archived prior publications. Local backups and the importable snapshot are retained under ignored `output/content-backup/`. The UI source must also be deployed for the new layouts and interactions to appear publicly.

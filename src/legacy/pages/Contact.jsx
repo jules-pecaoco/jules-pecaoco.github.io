@@ -87,11 +87,6 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
-      <div className="contact-header">
-        <h1>Get In Touch</h1>
-        <p>Feel free to reach out for collaborations, inquiries, or just to say hello!</p>
-      </div>
-
       <div className="contact-card">
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -152,7 +147,7 @@ const Contact = () => {
         </form>
 
         {status.text && (
-          <div className={`status-message ${status.type}`}>
+          <div role="status" aria-live="polite" className={`status-message ${status.type}`}>
             {status.text}
           </div>
         )}

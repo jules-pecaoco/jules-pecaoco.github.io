@@ -1,4 +1,6 @@
 ---
-import Base from '../../layouts/Base.astro';import Card from '../../components/ProjectCard.astro';import { projects, content } from '../../data/content.js';
+import Base from '../../layouts/Base.astro';
+import Card from '../../components/ProjectCard.astro';
+import { projects } from '../../data/content.js';
 ---
-<Base title="Projects — Jules Pecaoco" path="/projects/"><section class="page-heading"><p class="eyebrow">SELECTED WORK & PROJECT ARCHIVE</p><h1>Things I've built.</h1><p>Operational tools, mobile experiences, and useful websites. Explore the purpose and context behind each project.</p></section>{projects.map(project=><Card project={project}/>)}</Base>
+<Base title="Projects — Jules Pecaoco" path="/projects/"><section class="page-heading"><p class="eyebrow">SELECTED WORK & PROJECT ARCHIVE</p><h1>Things I've built.</h1><p>From operational tools to mobile experiences. Start with selected work, or explore the earlier projects behind my practice.</p></section><div class="project-filters" role="group" aria-label="Filter projects"><button data-filter="all" aria-pressed="true">All projects</button><button data-filter="featured" aria-pressed="false">Selected work</button><button data-filter="earlier" aria-pressed="false">Earlier work</button></div><p id="filter-status" role="status" aria-live="polite"></p>{projects.map(project=><div data-project-group={project.featured?'featured':'earlier'}><Card project={project}/></div>)}</Base>
