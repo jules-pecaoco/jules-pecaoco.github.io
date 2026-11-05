@@ -43,3 +43,5 @@ scripts/github-release.mjs
 scripts/review-content.mjs
 scripts/review-public-content.mjs
 scripts/migrate-portfolio-content.mjs
+
+src/data/publication-meta.generated.json

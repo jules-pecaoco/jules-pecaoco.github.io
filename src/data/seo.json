@@ -1,0 +1,152 @@
+{
+  "/": [
+    {
+      "title": "Jules Pecaoco | Web & Mobile Developer | Explore | Work",
+      "description": "Jules Pecaoco: Practical web and mobile applications for attendance, records, and business workflows. Explore projects and get in touch. See my work."
+    },
+    {
+      "title": "Jules Pecaoco | Web Developer Philippines | Explore",
+      "description": "Jules Pecaoco: Practical web and mobile applications for attendance, records, and business workflows. See the work and get in touch. See my work."
+    }
+  ],
+  "/about/": [
+    {
+      "title": "Jules Pecaoco | About a Web & Mobile Developer | Explore",
+      "description": "Jules Pecaoco: Meet the Bacolod developer behind practical web, mobile, and administrative applications. Read my background and discuss a project."
+    },
+    {
+      "title": "Jules Pecaoco | Developer in Bacolod | Explore | Work",
+      "description": "Jules Pecaoco: Meet the Bacolod developer behind practical web, mobile, and administrative applications. See the work and get in touch. See my work."
+    }
+  ],
+  "/projects/": [
+    {
+      "title": "Jules Pecaoco | Web & Mobile Projects | Explore | Work",
+      "description": "Jules Pecaoco: Explore web, mobile, and desktop projects with implementation details, technologies, and source links. View the work and discuss your needs."
+    },
+    {
+      "title": "Jules Pecaoco | Developer Project Portfolio | Explore",
+      "description": "Jules Pecaoco: Explore web, mobile, and desktop projects with implementation details, technologies, and source links. See the work and get in touch."
+    }
+  ],
+  "/resume/": [
+    {
+      "title": "Jules Pecaoco | Web Developer CV & Experience | Explore",
+      "description": "Jules Pecaoco: Review web and mobile skills, freelance experience, education, and qualifications in one place. Download my CV and discuss a role."
+    },
+    {
+      "title": "Jules Pecaoco | Developer Skills & Experience | Explore",
+      "description": "Jules Pecaoco: Review web and mobile skills, freelance experience, education, and qualifications in one place. See the work and get in touch."
+    }
+  ],
+  "/contact/": [
+    {
+      "title": "Jules Pecaoco | Contact a Web & Mobile Developer | Explore",
+      "description": "Jules Pecaoco: Contact a Bacolod developer about a web or mobile application, a role, or a collaboration. Share your requirements and start a conversation."
+    },
+    {
+      "title": "Jules Pecaoco | Web Developer for Your Project | Explore",
+      "description": "Jules Pecaoco: Contact a Bacolod developer about a web or mobile application, a role, or a collaboration. See the work and get in touch. See my work."
+    }
+  ],
+  "/events/": [
+    {
+      "title": "Jules Pecaoco | Developer Notes & Events | Explore",
+      "description": "Jules Pecaoco: This space will collect learning notes and event reflections from a Bacolod web and mobile developer. Explore details and contact me."
+    },
+    {
+      "title": "Jules Pecaoco | Web Developer Learning Notes | Explore",
+      "description": "Jules Pecaoco: This space will collect learning notes and event reflections from a Bacolod web and mobile developer. See the work and get in touch."
+    }
+  ],
+  "/projects/qr-attendance/": [
+    {
+      "title": "Jules Pecaoco | QR Code Attendance System Project | Explore",
+      "description": "Jules Pecaoco: An attendance workflow used by an organization handling 1,600+ students. Explore details and contact me. See my work. Contact me."
+    },
+    {
+      "title": "Jules Pecaoco | QR Code Attendance System Case Study",
+      "description": "Jules Pecaoco: An attendance workflow used by an organization handling 1,600+ students. View the work, review the details, and start a conversation."
+    }
+  ],
+  "/projects/tanaw/": [
+    {
+      "title": "Jules Pecaoco | TANAW Project | Explore | Work | Dev",
+      "description": "Jules Pecaoco: A mobile application for climate-risk visualization, location-based mapping, and hazard reporting. Explore details and contact me."
+    },
+    {
+      "title": "Jules Pecaoco | TANAW Case Study | Explore | Work | Dev",
+      "description": "Jules Pecaoco: A mobile application for climate-risk visualization, location-based mapping, and hazard reporting. See the work and get in touch."
+    }
+  ],
+  "/projects/cyberadryx/": [
+    {
+      "title": "Jules Pecaoco | CyberAdryx Online Project | Explore",
+      "description": "Jules Pecaoco: Cybersecurity learning content for IT students and professionals. Explore the implementation and source, then contact me about similar work."
+    },
+    {
+      "title": "Jules Pecaoco | CyberAdryx Online Case Study | Explore",
+      "description": "Jules Pecaoco: Cybersecurity learning content for IT students and professionals. View the work, review the details, and start a conversation."
+    }
+  ],
+  "/projects/healthmate/": [
+    {
+      "title": "Jules Pecaoco | Healthmate Project | Explore | Work",
+      "description": "Jules Pecaoco: Health records, patient information, and ingredient-based nutrition discovery. Explore details and contact me. See my work. Contact me."
+    },
+    {
+      "title": "Jules Pecaoco | Healthmate Case Study | Explore | Work",
+      "description": "Jules Pecaoco: Health records, patient information, and ingredient-based nutrition discovery. View the work, review the details, and start a conversation."
+    }
+  ],
+  "/projects/library-management/": [
+    {
+      "title": "Jules Pecaoco | Library Management System Project | Explore",
+      "description": "Jules Pecaoco: A structured approach to organizing and retrieving library data. Explore the implementation and source, then contact me about similar work."
+    },
+    {
+      "title": "Jules Pecaoco | Library Management System Case Study",
+      "description": "Jules Pecaoco: A structured approach to organizing and retrieving library data. View the work, review the details, and start a conversation."
+    }
+  ],
+  "/projects/portfolio/": [
+    {
+      "title": "Jules Pecaoco | Personal Portfolio Project | Explore",
+      "description": "Jules Pecaoco: A personal home for selected work, experience, and professional conversations. Explore details and contact me. See my work. Contact me."
+    },
+    {
+      "title": "Jules Pecaoco | Personal Portfolio Case Study | Explore",
+      "description": "Jules Pecaoco: A personal home for selected work, experience, and professional conversations. View the work, review the details, and start a conversation."
+    }
+  ],
+  "/projects/powerfitness/": [
+    {
+      "title": "Jules Pecaoco | Powerfitness Project | Explore | Work",
+      "description": "Jules Pecaoco: A gym website bringing schedules, trainers, and membership information together. Explore details and contact me. See my work."
+    },
+    {
+      "title": "Jules Pecaoco | Powerfitness Case Study | Explore | Work",
+      "description": "Jules Pecaoco: A gym website bringing schedules, trainers, and membership information together. View the work, review the details, and start a conversation."
+    }
+  ],
+  "/projects/memorial-plan/": [
+    {
+      "title": "Jules Pecaoco | Memorial Plan Manager Project | Explore",
+      "description": "Jules Pecaoco: Plan records, cost calculations, and printable receipts in a desktop workflow. Explore details and contact me. See my work. Contact me."
+    },
+    {
+      "title": "Jules Pecaoco | Memorial Plan Manager Case Study | Explore",
+      "description": "Jules Pecaoco: Plan records, cost calculations, and printable receipts in a desktop workflow. View the work, review the details, and start a conversation."
+    }
+  ],
+  "/projects/calculator/": [
+    {
+      "title": "Jules Pecaoco | Java Calculator Project | Explore | Work",
+      "description": "Jules Pecaoco: An expression calculator supporting more than basic arithmetic. Explore the implementation and source, then contact me about similar work."
+    },
+    {
+      "title": "Jules Pecaoco | Java Calculator Case Study | Explore",
+      "description": "Jules Pecaoco: An expression calculator supporting more than basic arithmetic. View the work, review the details, and start a conversation. See my work."
+    }
+  ]
+}

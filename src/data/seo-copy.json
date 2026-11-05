@@ -1,0 +1,22 @@
+{
+  "greeting": {
+    "before": "Hi I'm Jules.",
+    "after": "Jules Pecaoco."
+  },
+  "headline": {
+    "before": "I build for real life.",
+    "after": "Web & mobile developer."
+  },
+  "intro": {
+    "before": "I build web and mobile applications for attendance, record management, learning, and everyday business workflows. Based in Bacolod, Philippines.",
+    "after": "I am Jules Alfonz Pecaoco, a web and mobile application developer based in Bacolod, Philippines. I build practical tools for attendance, records, education, and business workflows."
+  },
+  "aboutBio": {
+    "before": "I'm a web and mobile application developer interested in making useful things for real people.\n\nMy work spans attendance workflows, mobile applications, educational websites, and administrative tools. I enjoy bringing structure to a problem and turning it into an experience people can navigate.\n\nI’m comfortable collaborating remotely and delivering features independently. I welcome conversations about the problem your team is trying to solve and how I can contribute.",
+    "after": "I am Jules Alfonz Pecaoco, also known as Jules Pecaoco, a web and mobile application developer based in Bacolod, Philippines.\n\nI build applications that connect everyday workflows with usable interfaces and structured data. My work includes attendance collection, administrative records, mobile mapping, and educational websites.\n\nFrom June to August 2025, I worked as a freelance full-stack developer on a QR attendance system for a university department in Bacolod. My work included APIs, database schemas, role-based access, multiple scanning stations, and automated reporting. The organization serves more than 1,600 students; this describes organization size rather than measured active users.\n\nMy toolkit includes JavaScript, TypeScript, React, React Native, Expo, PHP, Python, Java, MySQL, Firebase, and Supabase. Each project page lists its own technology stack and implementation details.\n\nReview my CV or contact me about a role, project, or collaboration."
+  },
+  "proofText": {
+    "before": "Students in the organization using the QR attendance system.",
+    "after": "Students served by the organization behind the QR attendance project."
+  }
+}

@@ -45,6 +45,9 @@ jobs:
       - name: Build published portfolio
         if: github.event_name != 'schedule' || steps.snapshot.outputs.changed == 'true'
         run: npm run build
+      - name: Verify rendered SEO output
+        if: github.event_name != 'schedule' || steps.snapshot.outputs.changed == 'true'
+        run: node scripts/verify-seo.mjs
       - uses: actions/configure-pages@v4
         if: github.event_name != 'schedule' || steps.snapshot.outputs.changed == 'true'
       - uses: actions/upload-pages-artifact@v3
